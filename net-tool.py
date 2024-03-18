@@ -144,7 +144,8 @@ def arp_protocol_check():
         if ARP in packet and packet[ARP].op in [1, 2]:  # ARP request or reply
             arp_protocol = "ARP"
             if packet[ARP].hwtype == 1 and packet[ARP].ptype == 0x0806:
-                arp_protocol = "S-ARP"
+                if "secure" in packet.summary().lower():
+                    arp_protocol = "S-ARP"
             print(f"{arp_protocol} Packet Detected: {packet.summary()}")
 
     interface = get_interfaces()
