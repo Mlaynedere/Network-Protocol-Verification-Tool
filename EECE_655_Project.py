@@ -17,11 +17,11 @@ import argparse
 import re
 from datetime import datetime, timedelta
 import time
-#import pybgpstream
-#import pytz
+import pybgpstream
+import pytz
 import requests
 
-#----------------------------------------------------------------------------------------------------------------------------------------- Hadi
+#----------------------------------------------------------------------------------------------------------------------------------------- 
 # Function to make sure the script runs with super user privileges privileges. 
 def check_sudo():
     if not 'SUDO_UID' in os.environ.keys():
@@ -125,7 +125,7 @@ def tls(website):
 
     checkSSLTLS(website)#takes website as input
 
-#---------------------------------------------------------------------------------------------------------------------------------------------- Hussein
+#---------------------------------------------------------------------------------------------------------------------------------------------- 
 
 #Function to dicover the ARP protocol used on the network (if it is ARP or S-ARP)
 def arp_protocol_check():
@@ -312,7 +312,7 @@ def arp_mitm(ip_range):
     # Run the packet sniffer on the interface. So we can capture all the packets and save it to a pcap file that can be opened in Wireshark.
     packet_sniffer(gateway_info["iface"])
 
-#------------------------------------------------------------------------------------------------------------------------------------------------- Maha
+#------------------------------------------------------------------------------------------------------------------------------------------------- 
 
 #This code performs a targetted nmap scan which uses the vuln script, to perfrom vulnerability scanning of the services running on the target
 
@@ -325,7 +325,6 @@ def nmap_scan(ip, scan_type="known_ports"):
     elif scan_type == "network":
         pass
     subprocess.run(command)
-'''
 def bgp_analysis():
     # at first, we need to get the isp name
     def get_isp_name():
@@ -439,13 +438,12 @@ def bgp_analysis():
             print("----------\n")
             print(bgp_data)
 
-    # from_time = get_time_one_hour_ago()
-    # end_time = get_current_time()
-    # bgp_data = get_bgp_data(["route-views2", "rrc00"], "updates", from_time, end_time, '9051')
-    # print(bgp_data)
-    # data = get_bgp_data(["route-views2", "rrc00"], "updates", "2023-01-01 00:00:00", "2023-01-01 03:00:00", '9051')
-    # print(data)
-'''
+    from_time = get_time_one_hour_ago()
+    end_time = get_current_time()
+    bgp_data = get_bgp_data(["route-views2", "rrc00"], "updates", from_time, end_time, '9051')
+    print(bgp_data)
+    data = get_bgp_data(["route-views2", "rrc00"], "updates", "2023-01-01 00:00:00", "2023-01-01 03:00:00", '9051')
+    print(data)
 #---------------------------------------------------------------------------------------------------------------------------
 def main():
     parser = argparse.ArgumentParser(description="Network Security Script")
@@ -471,8 +469,8 @@ def main():
     elif args.nmap_scan:
         nmap_scan(args.nmap_scan, args.scan_type)
     
-    #elif args.bgp_analysis:
-        #bgp_analysis()
+    elif args.bgp_analysis:
+        bgp_analysis()
     
     else:
         print("No valid option specified. Use --help for usage information.")
