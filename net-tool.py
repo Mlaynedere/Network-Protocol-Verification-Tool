@@ -283,15 +283,6 @@ def arp_mitm(ip_range):
 
 #This code performs a targetted nmap scan which uses the vuln script, to perfrom vulnerability scanning of the services running on the target
 
-def nmap_scan(ip, scan_type):
-    command = ["nmap", "-sV", "--script=vuln", ip]
-    if scan_type == "known_ports":
-        command.insert(1, "-p 20,21,22,23,25,53,80,137,139,443,445,1433,3389")
-    elif scan_type == "aggressive":
-        command.insert(1, "-p-")
-    elif scan_type == "network":
-        pass
-    subprocess.run(command)
 def bgp_analysis():
     # at first, we need to get the isp name
     def get_isp_name():
