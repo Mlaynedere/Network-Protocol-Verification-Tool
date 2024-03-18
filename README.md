@@ -53,5 +53,4 @@ A multi-purpose network management tool written in Python that checks network pr
 
 ## Usage
 To run the tool, a parameter should be specified
-
-### Example
+Watch the demo under this link: https://www.youtube.com/watch?v=3pBf9pOxO-o
