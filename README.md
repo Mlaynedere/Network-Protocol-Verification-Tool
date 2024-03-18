@@ -32,8 +32,5 @@ A multi-purpose network management tool written in Python that checks network pr
   - Create a custom SSL context to get SSL/TLS information
   - Prints specifications of TLS used
 
-### **ARP Check**
-  - Function to discover the ARP protocol used on the network
-  - First validates the packet is ARP
-  - Then makes sure if the protocol used is S-ARP by checking for the "magic" field in the header based on this paper https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=86813bba4b2be33ef224d2c4198d6e184999e565
-    
+### ****
+
