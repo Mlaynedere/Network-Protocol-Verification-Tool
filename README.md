@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/library-pytz-lightblue.svg">
 </p>
 
-A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for S-ARP, TLS, and IPsec. In addition, this tool also performs a vulnerability scan on the network using Nmap and simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
+A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for TLS and IPsec. In addition, this tool also performs a vulnerability scan on the network using Nmap and simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
 
 ## Project Overview
 
@@ -32,5 +32,9 @@ A multi-purpose network management tool written in Python that checks network pr
   - Create a custom SSL context to get SSL/TLS information
   - Prints specifications of TLS used
 
-### ****
-
+### **ARP Spoof Attack**
+  - Function to simulate a arp-spoof man in the middle attack to check if the network is vulnerable
+  - Utilize Scapy's ping function to discover devices on the netowrk
+  - Get the MAC and IP address of the gateway with the help of get_gateway_mac_address function
+  - 
+  - 
