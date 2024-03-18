@@ -36,5 +36,14 @@ A multi-purpose network management tool written in Python that checks network pr
   - Function to simulate a arp-spoof man in the middle attack to check if the network is vulnerable
   - Utilize Scapy's ping function to discover devices on the netowrk
   - Get the MAC and IP address of the gateway with the help of get_gateway_mac_address function
-  - 
-  - 
+  - Maintain internet connection on the target through IP forwarding
+  - Update the ARP tables
+  - Send a fake packet saying that we're at the router's IP to the target machine
+  - Send a packet to the router that we are at the target machine's IP
+  - Sniff packets on the network and writes it to a pcap file
+
+### **Vulnerabiltiy Scan**
+  - Utilise Nmap vuln script
+  - Perform the scan on all ports that are known to be vulnerable (20,21,22,23,25,53,80,137,139,443,445,1433,3389)
+    -This scan can be only run on one target at a time
+    
