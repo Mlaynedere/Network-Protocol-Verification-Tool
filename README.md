@@ -11,11 +11,11 @@
   <img src="https://img.shields.io/badge/library-pytz-lightblue.svg">
 </p>
 
-A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for S-ARP, TLS, SSL, and IPsec. In addition, this tool also performs a vulnerability scan on the network using Nmap and simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
+A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for S-ARP, TLS, and IPsec. In addition, this tool also performs a vulnerability scan on the network using Nmap and simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
 
 ## Project Overview
 
--**IPsec**
+### **IPsec**
   - Function to make sure packets are sent from the device using IPsec protocol
   - Validates IP header
   - Checks for protocol number
@@ -24,5 +24,14 @@ A multi-purpose network management tool written in Python that checks network pr
   - Protocol number 6 for TCP
   - Protocol number 17 for UDP
 
--**TLS**
-  -  
+### **TLS**
+  - Function to check if packets sent from the device are using TLS protocol
+  - Takes a URL as input and validates the website URL format
+  - Checks for HTTPS support
+  - Checks for HSTS (HTTPS Strict-Transport-Security) in https header
+  - Create a custom SSL context to get SSL/TLS information
+  - Prints specifications of TLS used
+
+### **ARP Check**
+  - Function to discover the ARP protocol used on the network
+  - 
