@@ -11,4 +11,4 @@
   <img src="https://img.shields.io/badge/library-pytz-lightblue.svg">
 </p>
 
-A multi-purpose network management tool written in python that checks network protocols in use, where it analyzes BGP and checks for S-ARP, TLS, SSL, and IPsec. It also tests the robustness of the network by simulating an ARP spoofing attack and performs a vulnerability scan using Nmap.
+A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for S-ARP, TLS, SSL, and IPsec. In addition, this tool also performs a vulnerability scan on the network using Nmap and simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
