@@ -1,5 +1,4 @@
 # Network-Protocol-Verification-Tool
-A multi-purpose network management tool written in python that checks network protocols in use, where it analyzes BGP and checks for S-ARP, TLS, SSL, and IPsec. It also tests the robustness of the network by simulating an ARP spoofing attack and performs a vulnerability scan using Nmap.
 
 <p align="center">
   <img src="https://img.shields.io/badge/language-python-blue.svg">
@@ -11,3 +10,5 @@ A multi-purpose network management tool written in python that checks network pr
   <img src="https://img.shields.io/badge/library-PyBGPStream-brightgreen.svg">
   <img src="https://img.shields.io/badge/library-pytz-lightblue.svg">
 </p>
+
+A multi-purpose network management tool written in python that checks network protocols in use, where it analyzes BGP and checks for S-ARP, TLS, SSL, and IPsec. It also tests the robustness of the network by simulating an ARP spoofing attack and performs a vulnerability scan using Nmap.
