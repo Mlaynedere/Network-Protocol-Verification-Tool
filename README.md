@@ -43,7 +43,7 @@ A multi-purpose network management tool written in Python that checks network pr
   - Sniff packets on the network and writes it to a pcap file
 
 ### **BGP Analysis**
-  -Function to check the safety of the BGP used
+  - Function to check the safety of the BGP used
   - Obtain ISP name
   - Utilize "Is BGP Safe Yet?" to check if ISP is safe
   - Initialize a stream using PyBGPStream
