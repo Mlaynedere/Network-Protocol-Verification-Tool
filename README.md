@@ -44,6 +44,8 @@ A multi-purpose network management tool written in Python that checks network pr
 
 ### **Vulnerabiltiy Scan**
   - Utilise Nmap vuln script
-  - Perform the scan on all ports that are known to be vulnerable (20,21,22,23,25,53,80,137,139,443,445,1433,3389)
-    -This scan can be only run on one target at a time
+  - Option to scan ports known to be vunerable (known ports)
+  - Option to scan all ports (agressive)
+  - Option to scan all known ports on all devices on the network (network)
+    
     
