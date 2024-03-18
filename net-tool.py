@@ -3,7 +3,6 @@ import socket
 import ssl
 from requests.packages.urllib3.exceptions import InsecureRequestWarning, SSLError
 from urllib3.exceptions import InsecureRequestWarning
-import threading
 from scapy.all import IP, ESP, AH, sniff, Ether, srp, ARP, conf, get_if_list
 import scapy.all as scapy
 import subprocess
@@ -16,10 +15,8 @@ import netifaces
 import argparse
 import re
 from datetime import datetime, timedelta
-import time
 import pybgpstream
 import pytz
-import requests
 
 #----------------------------------------------------------------------------------------------------------------------------------------- 
 # Function to make sure the script runs with super user privileges privileges. 
