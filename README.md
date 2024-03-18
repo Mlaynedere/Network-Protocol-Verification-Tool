@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/library-pytz-lightblue.svg">
 </p>
 
-A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for TLS and IPsec. In addition, this tool also performs a vulnerability scan on the network using Nmap and simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
+A multi-purpose network management tool written in Python that checks network protocols and tests the netowrk's security using several libraries. The script analyzes BGP used in the netowrk infrastructure and checks for TLS and IPsec. In addition, this tool simulates an ARP spoofing attack to test the robustness of the netowrk at its 2nd layer. This tool is **strictly for educational purposes** and should not be used for malicious activities.
 
 ## Project Overview
 
@@ -42,10 +42,16 @@ A multi-purpose network management tool written in Python that checks network pr
   - Send a packet to the router that we are at the target machine's IP
   - Sniff packets on the network and writes it to a pcap file
 
-### **Vulnerabiltiy Scan**
-  - Utilise Nmap vuln script
-  - Option to scan ports known to be vunerable (known ports)
-  - Option to scan all ports (agressive)
-  - Option to scan all known ports on all devices on the network (network)
-    
-    
+### **BGP Analysis**
+  -Function to check the safety of the BGP used
+  - Obtain ISP name
+  - Utilize "Is BGP Safe Yet?" to check if ISP is safe
+  - Initialize a stream using PyBGPStream
+  - Extract specific details of the ISP such as time-stamp, routes, origin and many more
+  - Analyze the BGP of the ISP
+
+
+## Usage
+To run the tool, a parameter should be specified
+
+### Example
