@@ -19,20 +19,17 @@ import pybgpstream
 import pytz
 
 #----------------------------------------------------------------------------------------------------------------------------------------- 
-# Function to make sure the script runs with super user privileges privileges. 
 def check_sudo():
     if not 'SUDO_UID' in os.environ.keys():
         print("Please run the script with sudo!")
         exit()
-
-#Function to make sure packets sent from the device use IPsec protocol
+        
 def ipsec():
     def detectProtocol(packet):
         try:
             if IP not in packet:
-                return "Invalid Packet: No IP Header" #checks if packet contains an IP header; if not, it prints "Invalid Packet: No IP Header"
-            ipHeader = packet[IP] #extracts IP header
-            #checking the length of the IP header
+                return "Invalid Packet: No IP Header" 
+            ipHeader = packet[IP] 
             ihl = ipHeader.ihl  #extracts internet header length
             expectedHeaderLength = ihl * 4  #IHL is in 4-byte units
             if len(ipHeader) < expectedHeaderLength:
@@ -51,13 +48,13 @@ def ipsec():
                 return "IP (with UDP)"
             else:
                 return f"IP (with Unknown Protocol {protocol})"
-        except Exception as e: #handling errors gracefully using try except
+        except Exception as e: 
             return f"Error during protocol detection: {str(e)}"
         
     def packetHandler(packet):
         try:
             result = detectProtocol(packet)
-            print(f"Captured Packet: {result}")#printing the results from the return statements
+            print(f"Captured Packet: {result}")
         except Exception as e:
             print(f"Error processing packet: {e}")
 
@@ -97,8 +94,7 @@ def tls(website):
                 print(f"The website {httpsURL} has HSTS enabled.") #prints it has hsts
             elif urlProtocol == 'https':
                 print(f"The website {httpsURL} does not have HSTS enabled and might be vulnerable to SSL stripping.")#else prints website doesn't have hsts
-        
-            #creating a custom SSL context to get SSL/TLS information, this part is from chatgpt-------------------------------------------------------
+
             hostname = url.split('://', 1)[-1].split('/')[0] # Extract the hostname from the URL.
             sslContext = ssl.create_default_context() # Use ssl.create_default_context() to create a default SSL context
             conn = sslContext.wrap_socket(socket.socket(socket.AF_INET), server_hostname=hostname) # Wrap the socket with the SSL context to create a secure socket.
@@ -407,26 +403,16 @@ def main():
     parser = argparse.ArgumentParser(description="Network Security Script")
     parser.add_argument("--ipsec", action="store_true", help="Detect IPsec usage in network traffic")
     parser.add_argument("--tls", metavar="WEBSITE", help="Check SSL/TLS features of a website (format: example.com)")
-    parser.add_argument("--arp-check", action="store_true", help="Check ARP protocol on a network interface")
     parser.add_argument("--arp-mitm", metavar="IP_RANGE", help="Simulate ARP spoofing MITM attack on the specified IP range")
-    parser.add_argument("--nmap-scan", metavar="TARGET_IP", help="Perform an nmap NSE scan using vuln script on a target IP address")
-    parser.add_argument("--scan-type", metavar="SCAN_TYPE", default="known_ports",
-                        choices=["known_ports", "aggressive", "network"],
-                        help="Type of nmap scan: known_ports (default), aggressive, network")
     parser.add_argument("bgp-analysis",action="store_true", help="Check if AS is using SBGP, as well as display BGP data and validity")
     args = parser.parse_args()
     check_sudo()
     if args.ipsec:
         ipsec()
     elif args.tls:
-        tls(args.tls)  # Pass the website argument here
-    elif args.arp_check:
-        arp_protocol_check()
+        tls(args.tls) 
     elif args.arp_mitm:
         arp_mitm(args.arp_mitm)
-    elif args.nmap_scan:
-        nmap_scan(args.nmap_scan, args.scan_type)
-    
     elif args.bgp_analysis:
         bgp_analysis()
     
