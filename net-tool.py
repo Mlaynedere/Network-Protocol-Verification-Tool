@@ -283,7 +283,7 @@ def arp_mitm(ip_range):
 
 #This code performs a targetted nmap scan which uses the vuln script, to perfrom vulnerability scanning of the services running on the target
 
-def nmap_scan(ip, scan_type="known_ports"):
+def nmap_scan(ip, scan_type):
     command = ["nmap", "-sV", "--script=vuln", ip]
     if scan_type == "known_ports":
         command.insert(1, "-p 20,21,22,23,25,53,80,137,139,443,445,1433,3389")
