@@ -86,7 +86,7 @@ def tls(website):
                 urlProtocol = 'https'
         
             else:
-                print(f"The website {url} does not support HTTPS and is vulnerable to SSL stripping.") #else print it doesn't support https
+                print(f"The website {url} does not support HTTPS.") #else print it doesn't support https
                 return
 
             #check HSTS
